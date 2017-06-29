@@ -45,8 +45,8 @@ source_suffix = ['.rst', '.md']
 master_doc = 'toc'
 
 # General information about the project.
-project = u'2017-ucsc-metagenomics'
-copyright = u'2016, Lab for Data Intensive Biology'
+project = u'2017-dibsi-metagenomics'
+copyright = u'2017, Lab for Data Intensive Biology'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -96,7 +96,7 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'bootstrap'
+html_theme = 'default'
 html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
 
 # Theme options are theme-specific and customize the look and feel of a theme
