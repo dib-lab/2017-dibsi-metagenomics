@@ -1,10 +1,10 @@
 # A sourmash tutorial
 
 ## Objectives 
-- compare reads to assemblies 
-- create and search a custom database
-- compare datasets and build a tree 
-- classify the components of a dataset 
+- Compare reads to assemblies 
+- Create and search a custom database
+- Compare datasets and build a tree 
+- Determine what's in a metagenome (Taxonomic classification) 
 
 
 ## Installing sourmash
