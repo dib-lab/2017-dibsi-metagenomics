@@ -1,17 +1,11 @@
 # A sourmash tutorial
 
-# Objectives 
+## Objectives 
+- compare reads to assemblies 
+- create and search a custom database
+- compare datasets and build a tree 
+- classify the components of a dataset 
 
--
-- 
--
-
-[sourmash](http://sourmash.readthedocs.io/en/latest/) is our lab's
-implementation of an ultra-fast lightweight approach to
-nucleotide-level search and comparison, called MinHash.
-
-You can read some background about MinHash sketches in this paper:
-[Mash: fast genome and metagenome distance estimation using MinHash. Ondov BD, Treangen TJ, Melsted P, Mallonee AB, Bergman NH, Koren S, Phillippy AM. Genome Biol. 2016 Jun 20;17(1):132. doi: 10.1186/s13059-016-0997-x.](http://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0997-x)
 
 ## Installing sourmash
 
@@ -29,6 +23,12 @@ tar xzf microbe-genbank-sbt-k31-2017.05.09.tar.gz
 ```
 -- they take a long time :).
 
+[sourmash](http://sourmash.readthedocs.io/en/latest/) is our lab's
+implementation of an ultra-fast lightweight approach to
+nucleotide-level search and comparison, called MinHash.
+
+You can read some background about MinHash sketches in this paper:
+[Mash: fast genome and metagenome distance estimation using MinHash. Ondov BD, Treangen TJ, Melsted P, Mallonee AB, Bergman NH, Koren S, Phillippy AM. Genome Biol. 2016 Jun 20;17(1):132. doi: 10.1186/s13059-016-0997-x.](http://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0997-x)
 ## K-mers!
 
 K-mers are a fairly simple concept that turn out to be tremendously
@@ -227,6 +227,8 @@ wget https://s3.amazonaws.com/public.ged.msu.edu/ecoliMG1655.fa.gz
 
 Compute a scaled MinHash signature from our reads:
 
+![](_static/Sourmash_flow_diagrams_QC.png)
+![](_static/Sourmash_flow_diagrams_compute.png)
 ```
 mkdir ~/sourmash
 cd ~/sourmash
@@ -247,6 +249,7 @@ sourmash compute --scaled 10000 -k 31 ~/data/ecoliMG1655.fa.gz -o ecoli-genome.s
 and now evaluate *containment*, that is, what fraction of the read content is
 contained in the genome:
 
+![](_static/Sourmash_flow_diagrams_search.png)
 ```
 sourmash search -k 31 ecoli-reads.sig ecoli-genome.sig --containment
 ```
@@ -402,6 +405,8 @@ After this database is unpacked, it produces a file
 directory `.sbt.genbank-k31`.
 
 Next, run the 'gather' command to see what's in your ecoli genome --
+
+![](Sourmash_flow_diagrams_gather.png)
 ```
 sourmash gather -k 31 ecoli-genome.sig ../genbank-k31.sbt.json
 ```
