@@ -417,6 +417,9 @@ directory `.sbt.genbank-k31`.
 Next, run the 'gather' command to see what's in your ecoli genome --
 
 ![](_static/Sourmash_flow_diagrams_gather.png)
+
+at the command line run: 
+
 ```
 sourmash gather -k 31 ecoli-reads.sig ../genbank-k31.sbt.json
 ```
