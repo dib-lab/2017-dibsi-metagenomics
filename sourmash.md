@@ -381,11 +381,18 @@ sourmash compare ecoli_many_sigs/* -o ecoli_cmp
 and then plot:
 
 ```
-sourmash plot --pdf --labels ecoli_cmp
+sourmash plot --labels ecoli_cmp
 ```
 
-which will produce a file `ecoli_cmp.matrix.pdf` and `ecoli_cmp.dendro.pdf`
+which will produce a file `ecoli_cmp.matrix.png` and `ecoli_cmp.dendro.png`
 which you can then download via FileZilla and view on your local computer.
+
+Now open jupyter notebook and visualize: 
+
+```
+from IPython.display import Image
+Image("ecoli_cmp.matrix.png")
+```
 
 Here's a PNG version:
 
@@ -408,25 +415,36 @@ Next, run the 'gather' command to see what's in your ecoli genome --
 
 ![](_static/Sourmash_flow_diagrams_gather.png)
 ```
-sourmash gather -k 31 ecoli-genome.sig ../genbank-k31.sbt.json
+sourmash gather -k 31 ecoli-reads.sig ../genbank-k31.sbt.json
 ```
 
 and you should get:
 
 ```
 # running sourmash subcommand: sbt_gather
-loaded query: /home/ubuntu/data/ecoliMG1655.... (k=31, DNA)
+loaded query: /home/tx160085/data/ecoli_ref-... (k=31, DNA)
+loaded SBT ../genbank-k31.sbt.json
 
-overlap     p_query p_match 
+overlap     p_query p_match
 ---------   ------- --------
-4.9 Mbp     100.0%   99.8%      CP011320.1 Escherichia coli strain SQ37,
+4.9 Mbp      46.6%  100.0%      APIN01000001.1 Escherichia coli str. ...
+3.4 Mbp      32.4%    1.5%      AQAX01000001.1 Escherichia coli P0304...
+2.5 Mbp      23.6%    0.7%      JHDK01000001.1 Escherichia coli 1-110...
+160.0 kbp     1.5%    0.6%      AMPE01000001.1 Citrobacter sp. L17 co...
+0.5 Mbp       4.8%    0.4%      BBVS01000001.1 Escherichia albertii D...
+3.3 Mbp      31.2%    0.4%      APYP01000001.1 Escherichia coli P0299...
+3.6 Mbp      34.5%    0.4%      AQCO01000001.1 Escherichia coli MP021...
+4.3 Mbp      40.9%    0.4%      JONB01000001.1 Escherichia coli 3-020...
+2.8 Mbp      26.0%    0.5%      AZPL01000001.1 Shigella flexneri 2001...
+2.8 Mbp      26.0%    0.2%      MIIY01000001.1 Shigella sp. FC1737 NO...
+2.2 Mbp      20.7%    0.2%      AFET01000004.1 Escherichia coli AA86 ...
+found less than 10.0 kbp in common. => exiting
 
-found 1 matches total;
-the recovered matches hit 100.0% of the query
+found 11 matches total;
+the recovered matches hit 49.2% of the query
 ```
 
-In this case, the output is kind of boring because this is a single
-genome.  But! You can use this on metagenomes (assembled and
+You can use this on metagenomes (assembled and
 unassembled) as well; you've just got to make the signature files.
 
 To see this in action, here is gather running on a signature generated
