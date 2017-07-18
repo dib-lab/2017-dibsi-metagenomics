@@ -166,7 +166,7 @@ of 0 means the samples are completely different.
 This is a great measure and it can be used to search databases and 
 cluster unknown genomes and all sorts of other things!  The only real
 problem with it is that there are a *lot* of k-mers in a genome --
-a 5 Mbp genome (like E. coli) has 5 m k-mers!
+a 5 Mbp genome (like *E. coli*) has 5 m k-mers!
 
 About a year ago,
 [Ondov et al. (2016)](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0997-x)
@@ -240,7 +240,7 @@ sourmash compute --scaled 10000 ~/data/ecoli_ref*pe*.fq.gz -o ecoli-reads.sig -k
 
 Use case: how much of the read content is contained in the reference genome?
 
-Build a signature for an E. coli genome:
+Build a signature for an *E. coli* genome:
 
 ```
 sourmash compute --scaled 10000 -k 31 ~/data/ecoliMG1655.fa.gz -o ecoli-genome.sig
