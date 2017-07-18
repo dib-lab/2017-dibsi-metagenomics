@@ -316,6 +316,9 @@ What does the database look like and how does the search work?
 
 ![](_static/SBT.png)
 
+sourmash search (and gather) compare the query and the database (sequence bloom tree) 
+and report matches based containment.  
+
 One point to make with this is that the search can quickly narrow down
 which signatures match your query, without losing any matches.  It's a
 clever example of how computer scientists can actually make life
