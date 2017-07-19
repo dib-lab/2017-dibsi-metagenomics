@@ -19,7 +19,7 @@ You can read some background about MinHash sketches in this paper:
 and run these two commands:
 
 ```
-cd ~/
+cd
 curl -O https://s3-us-west-1.amazonaws.com/spacegraphcats.ucdavis.edu/microbe-genbank-sbt-k31-2017.05.09.tar.gz
 tar xzf microbe-genbank-sbt-k31-2017.05.09.tar.gz
 ```
