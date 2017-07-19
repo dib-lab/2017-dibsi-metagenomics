@@ -1,15 +1,17 @@
 # A sourmash tutorial
 
+[sourmash](http://sourmash.readthedocs.io/en/latest/) is our lab's
+implementation of an ultra-fast lightweight approach to
+nucleotide-level search and comparison, called MinHash.
+
+You can read some background about MinHash sketches in this paper:
+[Mash: fast genome and metagenome distance estimation using MinHash. Ondov BD, Treangen TJ, Melsted P, Mallonee AB, Bergman NH, Koren S, Phillippy AM. Genome Biol. 2016 Jun 20;17(1):132. doi: 10.1186/s13059-016-0997-x.](http://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0997-x)
+
 ## Objectives 
 - Compare reads to assemblies 
 - Create and search a custom database
 - Compare datasets and build a tree 
 - Determine what's in a metagenome (Taxonomic classification) 
-
-
-## Installing sourmash
-
-# K-mers, k-mer specificity, and comparing samples with k-mer Jaccard distance.
 
 ## At the beginning
 
@@ -23,12 +25,8 @@ tar xzf microbe-genbank-sbt-k31-2017.05.09.tar.gz
 ```
 -- they take a long time :).
 
-[sourmash](http://sourmash.readthedocs.io/en/latest/) is our lab's
-implementation of an ultra-fast lightweight approach to
-nucleotide-level search and comparison, called MinHash.
+# K-mers, k-mer specificity, and comparing samples with k-mer Jaccard distance.
 
-You can read some background about MinHash sketches in this paper:
-[Mash: fast genome and metagenome distance estimation using MinHash. Ondov BD, Treangen TJ, Melsted P, Mallonee AB, Bergman NH, Koren S, Phillippy AM. Genome Biol. 2016 Jun 20;17(1):132. doi: 10.1186/s13059-016-0997-x.](http://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0997-x)
 ## K-mers!
 
 K-mers are a fairly simple concept that turn out to be tremendously
