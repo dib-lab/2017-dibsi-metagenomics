@@ -373,7 +373,9 @@ Adjust plotting (this is a bug in sourmash :) --
 echo 'backend : Agg' > matplotlibrc
 ```
 
-Compare all the things:
+Compare all the signatures:
+
+![](_static/Sourmash_flow_diagrams_compare.png)
 
 ```
 sourmash compare ecoli_many_sigs/* -o ecoli_cmp
@@ -419,7 +421,7 @@ Next, run the 'gather' command to see what's in your ecoli genome --
 at the command line run: 
 
 ```
-sourmash gather -k 31 ecoli-reads.sig ../genbank-k31.sbt.json
+sourmash gather -k 31 ecoli-reads.sig ../genbank-k31.sbt.json -o ecoli-reads-gather-reults.csv
 ```
 
 and you should get:
